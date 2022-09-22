@@ -1,0 +1,21 @@
+<?php
+/** @var \HomeworkLessThan\SystemConfigExample\Block\Template $block */
+
+$viewModel = $block->getViewModel();
+
+$currentProduct = $viewModel->getCurrentProduct();
+
+$id = $currentProduct->getId();
+$_productStock = $viewModel->getStockItem($id);
+
+$Y = $currentProduct->getQty();
+
+if ($viewModel->isEnabled()):
+    if ($_productStock->getQty() < $viewModel->getX()) :
+        echo "<h3 style='color:black'>" . "Продукт заканчивается" . "</h3>";
+        echo "<br>";
+        echo "</h3>" . "<h3 style='color:red'>" . "Осталось " . $Y . " шт." . "</h3>";
+    endif;
+endif;
+
+?>

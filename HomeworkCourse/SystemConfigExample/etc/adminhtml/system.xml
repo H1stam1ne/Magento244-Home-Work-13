@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="homeworkcourse" translate="label" sortOrder="1000">
+            <label>HomeworkCourse</label>
+        </tab>
+        <section id="homeworkcourse" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>HomeworkCourse</label>
+            <tab>homeworkcourse</tab>
+            <resource>HomeworkCourse_SystemConfigExample::homeworkcourse</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" type="select" translate="label,comment,tooltip" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>homeworkcourse/general/enable</config_path>
+                </field>
+                <field id="UAH" type="select" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>UAH</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>homeworkcourse/general/UAH</config_path>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="course_UAH" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Course UAH</label>
+                    <validate>required-entry</validate>
+                    <config_path>homeworkcourse/general/course_UAH</config_path>
+                    <depends>
+                        <field id="UAH">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="USD" type="select" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>USD</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>homeworkcourse/general/USD</config_path>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="course_USD" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Course USD</label>
+                    <validate>required-entry</validate>
+                    <config_path>homeworkcourse/general/course_USD</config_path>
+                    <depends>
+                        <field id="USD">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="EURO" type="select" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>EURO</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>homeworkcourse/general/EURO</config_path>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="course_EURO" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Course EURO</label>
+                    <validate>required-entry</validate>
+                    <config_path>homeworkcourse/general/course_EURO</config_path>
+                    <depends>
+                        <field id="EURO">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

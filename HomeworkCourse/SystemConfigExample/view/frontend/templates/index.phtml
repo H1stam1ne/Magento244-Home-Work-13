@@ -1,0 +1,22 @@
+<?php
+/** @var \HomeworkCourse\SystemConfigExample\Block\Template $block */
+
+
+$viewModel = $block->getViewModel();
+
+$currentProduct = $viewModel->getCurrentProduct();
+
+?>
+
+<?php if ($viewModel->isEnabled()): ?>
+    <?php if ($viewModel->isEnabledUAH()): ?>
+        <?= "<h3 style='color:black'>" . "Цена в гривнах: " . "</h3>" . "<h3 style='color:red'>" . $currentProduct->getFinalPrice() * $viewModel->getUAH() . " ₴" . "</h3>"; ?>
+    <?php endif; ?>
+    <?php if ($viewModel->isEnabledUSD()): ?>
+        <?= "<h3 style='color:black'>" . "Цена в долларах: " . "</h3>" . "<h3 style='color:red'>" . $currentProduct->getFinalPrice() * $viewModel->getUSD() . " $" . "</h3>"; ?>
+    <?php endif; ?>
+    <?php if ($viewModel->isEnabledEURO()): ?>
+        <?= "<h3 style='color:black'>" . "Цена в евро: " . "</h3>" . "<h3 style='color:red'>" . $currentProduct->getFinalPrice() * $viewModel->getEURO() . " €" . "</h3>"; ?>
+    <?php endif; ?>
+<?php endif; ?>
+

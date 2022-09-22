@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="HomeworkCourse_SystemConfigExample::homeworkcourse" title="HomeworkCourse" module="HomeworkCourse_SystemConfigExample" sortOrder="51" resource="HomeworkCourse_SystemConfigExample::homeworkcourse"/>
+        <add id="HomeworkCourse_SystemConfigExample::homeworkcourse_configuration" title="Configuration" module="HomeworkCourse_SystemConfigExample" sortOrder="99" parent="HomeworkCourse_SystemConfigExample::homeworkcourse" action="adminhtml/system_config/edit/section/homeworkcourse" resource="HomeworkCourse_SystemConfigExample::homeworkcourse"/>
+    </menu>
+</config>
